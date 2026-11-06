@@ -467,6 +467,7 @@ main{box-shadow:none}
 .engrave{-webkit-mask-image:radial-gradient(ellipse 50% 50%,#000 75%,transparent);mask-image:radial-gradient(ellipse 50% 50%,#000 75%,transparent)}
 .album-qr.bloqueado .qr-bg{filter:none;opacity:1}
 .album-qr .qr-bg{-webkit-mask-image:linear-gradient(transparent,#000 6%,#000 94%,transparent),linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(transparent,#000 6%,#000 94%,transparent),linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-composite:intersect}
+#hTxt.wait,#prologo .h-scroll.wait{opacity:0;visibility:hidden}
 </style>
 </head>
 <body class="locked">
@@ -494,12 +495,12 @@ main{box-shadow:none}
 <main>
 <section id="prologo" data-nav="Prólogo">
   <div class="hero-bg" id="heroBg"><i class="hero-still" role="img" aria-label="Telón abierto frente a la villa"></i><video id="vTelar" src="intro/telar.mp4" poster="intro/telar-final.jpg" muted playsinline preload="auto" aria-hidden="true"></video></div>
-  <div class="h-txt" id="hTxt">
+  <div class="h-txt wait" id="hTxt">
     <h2 class="h-names">Jennifer<span class="amp">&amp;</span>Marcel</h2>
     <p class="h-date">10 · abril · 2027</p>
     <p class="h-city">Chimbote · Perú</p>
   </div>
-  <div class="h-scroll" aria-hidden="true">Desliza<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+  <div class="h-scroll wait" aria-hidden="true">Desliza<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
 </section>
 
 <section id="bienvenida" class="art-sec" data-nav="Bienvenida">
@@ -729,6 +730,8 @@ if (HAS_GSAP) gsap.registerPlugin(ScrollTrigger);
     window.scrollTo(0, 0);
     document.body.classList.remove('locked');
     intro.classList.add('gone');
+    var ht = document.getElementById('hTxt'), hs = document.querySelector('#prologo .h-scroll');
+    ht.classList.remove('wait'); setTimeout(function(){ hs.classList.remove('wait'); }, 1600);
     setTimeout(function(){ document.getElementById('nav').classList.add('show'); }, 700);
     if (HAS_GSAP){
       ScrollTrigger.refresh();
