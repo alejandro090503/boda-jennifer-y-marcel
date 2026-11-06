@@ -519,6 +519,8 @@ main > section,#epilogo{padding:56px 22px!important}
 .gift-card .it{font-size:15px!important;line-height:1.55}
 .gift-card .ttl{font-size:clamp(24px,6.4vw,32px)!important}
 .fam-block.oval::before{-webkit-mask-image:radial-gradient(ellipse 48% 48% at 50% 50%,#000 80%,transparent 100%);mask-image:radial-gradient(ellipse 48% 48% at 50% 50%,#000 80%,transparent 100%)}
+.hero-still.inicio{background-image:url('intro/telar-inicio.jpg')}
+#heroBg video.oculto{visibility:hidden}
 </style>
 </head>
 <body class="locked">
@@ -545,7 +547,7 @@ main > section,#epilogo{padding:56px 22px!important}
 
 <main>
 <section id="prologo" data-nav="Prólogo">
-  <div class="hero-bg" id="heroBg"><i class="hero-still" role="img" aria-label="Telón abierto frente a la villa"></i><video id="vTelar" src="intro/telar.mp4" poster="intro/telar-final.jpg" muted playsinline preload="auto" aria-hidden="true"></video></div>
+  <div class="hero-bg" id="heroBg"><i class="hero-still inicio" role="img" aria-label="Telón abierto frente a la villa"></i><video id="vTelar" src="intro/telar.mp4" poster="intro/telar-final.jpg" muted playsinline preload="auto" aria-hidden="true"></video></div>
   <div class="h-txt wait" id="hTxt">
     <h2 class="h-names">Jennifer<span class="amp">&amp;</span>Marcel</h2>
     <p class="h-date">10 · abril · 2027</p>
@@ -768,13 +770,19 @@ var RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var HAS_GSAP = !!(window.gsap && window.ScrollTrigger);
 if (HAS_GSAP) gsap.registerPlugin(ScrollTrigger);
 
-/* ── Portada: sobre → telar → nombres (cambios con fundido, sin cortes) ── */
+/* ── Portada: sobre → telar → nombres ──
+   El telar se reproduce dentro de la portada y se queda en su último cuadro.
+   Si no alcanza a terminar (iPhone sin datos, red lenta), se muestra la foto fija del telón abierto. */
 (function(){
   var intro = document.getElementById('intro'), vS = document.getElementById('vSobre'), vT = document.getElementById('vTelar');
-  var started = false, handed = false, done = false;
-  vT.pause(); try { vT.currentTime = 0; } catch(e){}
+  var still = document.querySelector('#heroBg .hero-still');
+  var started = false, handed = false, done = false, safety = null;
+  vT.pause();
   function finish(){
     if (done) return; done = true;
+    clearTimeout(safety);
+    still.classList.remove('inicio');
+    if (!vT.ended){ vT.pause(); vT.classList.add('oculto'); }
     window.scrollTo(0, 0);
     document.body.classList.remove('locked');
     intro.classList.add('gone');
@@ -786,20 +794,25 @@ if (HAS_GSAP) gsap.registerPlugin(ScrollTrigger);
       if (!RM) gsap.fromTo('#hTxt > *', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 1.4, stagger: .2, ease: 'power2.out', delay: .35 });
     }
   }
+  function arm(ms){ clearTimeout(safety); safety = setTimeout(finish, ms); }
   function handoff(){
     if (handed) return; handed = true;
     var p = vT.play(); if (p && p.catch) p.catch(finish);
     intro.classList.add('telar');
+    arm(9000);
   }
   vS.addEventListener('timeupdate', function(){ if (vS.duration && vS.currentTime >= vS.duration - 0.55) handoff(); });
   vS.addEventListener('ended', handoff);
+  vS.addEventListener('playing', function(){ arm(12000); });
   vT.addEventListener('ended', finish);
+  vT.addEventListener('error', finish);
   function start(){
     if (started) return; started = true;
     intro.classList.add('playing');
     if (RM){ finish(); return; }
+    try { vT.load(); } catch(e){}
     var p = vS.play(); if (p && p.catch) p.catch(finish);
-    setTimeout(finish, 14000);
+    arm(25000);
   }
   document.getElementById('introTap').addEventListener('click', start);
   intro.addEventListener('click', start);
