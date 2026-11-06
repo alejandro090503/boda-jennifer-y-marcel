@@ -15,9 +15,10 @@
 <meta property="og:url" content="https://boda-jennifer-y-marcel.vercel.app">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,500;0,600;1,500&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,500;0,600;1,500&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-<link rel="preload" as="image" href="f3.jpg">
+<link rel="preload" as="image" href="intro/sobre-poster.jpg">
+<link rel="preload" as="image" href="intro/telar-final.jpg">
 <style>
 :root{
   --paper:#F5F0E4; --paper2:#ECE5D3; --surface:#FBF8F1;
@@ -73,29 +74,6 @@ main > section, #epilogo{position:relative;isolation:isolate;padding:clamp(96px,
 .lev{animation:levitate 6.5s ease-in-out infinite}
 .lev.d1{animation-delay:-2.2s}.lev.d2{animation-delay:-4.1s}
 
-/* ═════ PORTADA DEL LIBRO ═════ */
-#book{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:#20271D;perspective:2200px;overflow:hidden}
-#book .page{position:absolute;width:min(86vw,420px);height:min(78svh,620px);background:var(--paper);border-radius:3px 10px 10px 3px;box-shadow:0 30px 70px rgba(0,0,0,.45);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 30px}
-#book .page p{font-family:var(--book);font-style:italic;font-size:19px;color:var(--ink-soft);line-height:1.7}
-#book .page .chap{margin-bottom:16px}
-.cover{position:absolute;width:min(86vw,420px);height:min(78svh,620px);transform-origin:left center;transform-style:preserve-3d;transition:transform 1.5s cubic-bezier(.6,.05,.25,1)}
-.cover-face{position:absolute;inset:0;border-radius:3px 10px 10px 3px;backface-visibility:hidden;-webkit-backface-visibility:hidden;
-  background:linear-gradient(90deg,rgba(0,0,0,.28) 0,rgba(0,0,0,.05) 4%,rgba(255,255,255,.04) 6%,transparent 10%),radial-gradient(ellipse at 50% 35%,#566B4D,#3A4935 70%,#2F3B2B);
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 30px 80px rgba(0,0,0,.55);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 28px;color:#F1EBDC}
-.cover-face::before{content:'';position:absolute;inset:18px 18px 18px 26px;border:1px solid rgba(214,196,152,.55);border-radius:2px}
-.cover-face::after{content:'';position:absolute;inset:25px 25px 25px 33px;border:1px solid rgba(214,196,152,.25)}
-.cover-back{position:absolute;inset:0;border-radius:10px 3px 3px 10px;background:#E9E1CD;transform:rotateY(180deg);backface-visibility:hidden;-webkit-backface-visibility:hidden}
-.cv-eyebrow{font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:5px;text-transform:uppercase;color:#D9C99F}
-.cv-mono{font-family:var(--serif);font-weight:600;font-size:30px;color:#D9C99F;margin:18px 0 10px;letter-spacing:6px}
-.cv-names{font-family:var(--serif);font-weight:600;font-style:italic;font-size:clamp(44px,12vw,60px);line-height:1.05;margin:6px 0}
-.cv-amp{display:block;font-size:.55em;color:#D9C99F;margin:2px 0}
-.cv-sub{font-family:var(--book);font-style:italic;font-size:18px;color:#E6DEC9;margin-top:14px}
-.cv-date{font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:4px;text-transform:uppercase;color:#D9C99F;margin-top:22px}
-.cv-btn{position:relative;z-index:2;margin-top:34px;min-height:52px;padding:14px 30px;border-radius:999px;border:1.5px solid #D9C99F;background:rgba(217,201,159,.12);color:#F7F1E3;font-family:var(--sans);font-weight:600;font-size:14px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;animation:breathe 3s ease-in-out infinite}
-@keyframes breathe{0%,100%{box-shadow:0 0 0 0 rgba(217,201,159,.35)}50%{box-shadow:0 0 0 10px rgba(217,201,159,0)}}
-#book.open .cover{transform:rotateY(-165deg)}
-#book.gone{opacity:0;visibility:hidden;transition:opacity .9s ease .1s,visibility 0s linear 1s}
-
 /* ═════ MENÚ FLOTANTE ═════ */
 .nav{position:fixed;z-index:900;left:50%;display:flex;align-items:center;gap:6px;padding:6px;border-radius:999px;
   background:rgba(245,240,228,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--hair);box-shadow:0 18px 50px rgba(42,43,38,.16);
@@ -126,25 +104,27 @@ main > section, #epilogo{position:relative;isolation:isolate;padding:clamp(96px,
 .sheet li a.on b{font-style:italic;color:var(--sage)}
 .sheet-foot{text-align:center;font-family:var(--sans);font-weight:600;font-size:12.5px;letter-spacing:3px;text-transform:uppercase;color:var(--ink-soft);margin-top:24px}
 
-/* ═════ HERO ═════ */
-#prologo{min-height:100svh;padding:0!important;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;background:#2B3427!important}
-.hero-bg{position:absolute;inset:-6% 0;overflow:hidden;z-index:-3}
-.hero-drift{position:absolute;inset:0;background:url('f3.jpg') 50% 38%/cover no-repeat;animation:heroDrift 26s ease-in-out infinite alternate}
-@keyframes heroDrift{0%{transform:translate(-1%,-.8%) scale(1.02)}100%{transform:translate(1.5%,1.2%) scale(1.10)}}
-.h-shine{position:absolute;inset:0;z-index:-2;mix-blend-mode:soft-light;pointer-events:none;overflow:hidden}
-.h-shine::before{content:'';position:absolute;top:-50%;bottom:-50%;left:-60%;width:55%;background:linear-gradient(105deg,transparent,rgba(255,250,235,.75),transparent);transform:rotate(12deg);animation:heroShine 9s ease-in-out infinite}
-@keyframes heroShine{0%{translate:0 0}55%,100%{translate:330% 0}}
-.h-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(32,39,29,.28) 0%,rgba(32,39,29,.04) 30%,rgba(32,39,29,.45) 58%,rgba(32,39,29,.86) 80%,rgba(32,39,29,.96) 100%)}
-.h-frame{position:absolute;inset:16px;border:1px solid rgba(241,235,220,.4);pointer-events:none}
-.h-txt{position:relative;text-align:center;color:#F7F2E6;padding:0 24px 110px}
-.h-eyebrow{font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:5px;text-transform:uppercase;color:#E2D6B4}
-.h-names{font-family:var(--serif);font-weight:600;font-style:italic;font-size:clamp(54px,15vw,92px);line-height:1.05;margin:12px 0 4px;text-shadow:0 4px 30px rgba(0,0,0,.4)}
-.h-names .amp{display:block;font-size:.5em;color:#E2D6B4;line-height:1.1}
-.h-date{display:inline-block;margin-top:18px;padding:10px 20px;border-top:1px solid rgba(226,214,180,.6);border-bottom:1px solid rgba(226,214,180,.6);font-family:var(--sans);font-weight:600;font-size:14px;letter-spacing:3.5px;text-transform:uppercase;color:#F7F2E6}
-.h-city{font-family:var(--sans);font-weight:600;font-size:14px;letter-spacing:3px;text-transform:uppercase;color:#E2D6B4;margin-top:12px}
-.h-scroll{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:#E2D6B4;font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:3px;text-transform:uppercase}
-.h-scroll svg{width:20px;height:20px;animation:nudge 1.8s ease-in-out infinite}
-@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+/* ═════ PORTADA: sobre → telar → nombres ═════ */
+#intro{position:fixed;inset:0;z-index:9999;background:#E9E3D6;display:flex;justify-content:center;transition:opacity .9s ease,visibility 0s linear .9s}
+#intro.gone{opacity:0;visibility:hidden}
+.intro-box{position:relative;width:100%;max-width:680px;height:100%;overflow:hidden}
+.intro-box video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#E9E3D6}
+#vTelar{opacity:0}
+#intro.telar #vTelar{opacity:1}
+.intro-tap{position:absolute;left:50%;bottom:max(34px,env(safe-area-inset-bottom));transform:translateX(-50%);min-height:50px;padding:12px 28px;border-radius:999px;border:1.5px solid rgba(245,240,228,.9);background:rgba(63,79,57,.55);color:#F7F2E6;font-family:var(--sans);font-weight:600;font-size:14px;letter-spacing:3px;text-transform:uppercase;white-space:nowrap;cursor:pointer;animation:breathe 3s ease-in-out infinite;transition:opacity .4s}
+#intro.playing .intro-tap{opacity:0;pointer-events:none}
+@keyframes breathe{0%,100%{box-shadow:0 0 0 0 rgba(245,240,228,.45)}50%{box-shadow:0 0 0 12px rgba(245,240,228,0)}}
+#prologo{min-height:100svh;height:100svh;padding:0!important;overflow:hidden;background:#E9E3D6!important}
+.hero-bg{position:absolute;inset:0;overflow:hidden;z-index:-3}
+.hero-still{position:absolute;inset:0;background:url('intro/telar-final.jpg') center/cover no-repeat}
+.h-txt{position:absolute;left:0;right:0;top:19%;height:28%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#3B3A36;padding:0 26%}
+.h-names{font-family:'Bodoni Moda',var(--serif);font-weight:500;font-size:clamp(30px,8.6vw,54px);line-height:1.12;color:#3B3A36}
+.h-names .amp{display:block;font-size:.8em}
+.h-date{margin-top:12px;font-family:var(--serif);font-weight:600;font-size:clamp(14px,3.9vw,19px);letter-spacing:.28em;color:#2F302B}
+.h-city{margin-top:4px;font-family:var(--serif);font-weight:600;font-size:clamp(13px,3.5vw,17px);letter-spacing:.22em;text-transform:uppercase;color:#56694D}
+.h-scroll{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:4px;color:#3F4F39;font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:3px;text-transform:uppercase;background:rgba(245,240,228,.8);padding:6px 14px;border-radius:999px}
+.h-scroll svg{width:18px;height:18px;animation:nudge 1.8s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
 
 /* ═════ FAMILIA ═════ */
 .dropcap{max-width:460px;margin:30px auto 0;font-size:19px;line-height:1.75;color:var(--ink);text-align:left;hyphens:auto}
@@ -378,21 +358,11 @@ main{overflow-x:clip}
 </head>
 <body class="locked">
 
-<div id="book" aria-label="Portada de la invitación">
-  <div class="page">
-    <span class="chap">Prólogo</span>
-    <p>Toda gran historia tiene un capítulo que lo cambia todo. Este es el nuestro, y queremos escribirlo contigo.</p>
-  </div>
-  <div class="cover" id="cover">
-    <div class="cover-face">
-      <span class="cv-eyebrow">Una historia de amor</span>
-      <span class="cv-mono">J · M</span>
-      <h1 class="cv-names">Jennifer<span class="cv-amp">&amp;</span>Marcel</h1>
-      <p class="cv-sub">El capítulo más especial</p>
-      <p class="cv-date">10 · IV · MMXXVII</p>
-      <button class="cv-btn" id="openBook" type="button">Abrir el libro</button>
-    </div>
-    <div class="cover-back"></div>
+<div id="intro" aria-label="Portada de la invitación">
+  <div class="intro-box">
+    <video id="vSobre" src="intro/sobre.mp4" poster="intro/sobre-poster.jpg" muted playsinline preload="auto"></video>
+    <video id="vTelar" src="intro/telar.mp4" muted playsinline preload="auto"></video>
+    <button class="intro-tap" id="introTap" type="button">Toca para abrir</button>
   </div>
 </div>
 
@@ -416,14 +386,10 @@ main{overflow-x:clip}
 
 <main>
 <section id="prologo" data-nav="Prólogo">
-  <div class="hero-bg" id="heroBg"><i class="hero-drift" role="img" aria-label="Jennifer y Marcel frente al lago"></i></div>
-  <div class="h-shine" aria-hidden="true"></div>
-  <div class="h-shade"></div>
-  <div class="h-frame"></div>
+  <div class="hero-bg" id="heroBg"><i class="hero-still" role="img" aria-label="Telón abierto frente a la villa"></i></div>
   <div class="h-txt" id="hTxt">
-    <p class="h-eyebrow">Nos casamos</p>
     <h2 class="h-names">Jennifer<span class="amp">&amp;</span>Marcel</h2>
-    <p class="h-date">Sábado 10 de abril de 2027</p>
+    <p class="h-date">10 · abril · 2027</p>
     <p class="h-city">Chimbote · Perú</p>
   </div>
   <div class="h-scroll" aria-hidden="true">Desliza<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
@@ -667,19 +633,36 @@ var RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var HAS_GSAP = !!(window.gsap && window.ScrollTrigger);
 if (HAS_GSAP) gsap.registerPlugin(ScrollTrigger);
 
-/* ── Abrir el libro ── */
+/* ── Portada: sobre → telar → nombres ── */
 (function(){
-  var book = document.getElementById('book'), opened = false;
-  document.getElementById('openBook').addEventListener('click', function(){
-    if (opened) return; opened = true;
-    book.classList.add('open');
-    setTimeout(function(){
-      book.classList.add('gone');
-      document.body.classList.remove('locked');
-      document.getElementById('nav').classList.add('show');
-      if (HAS_GSAP) ScrollTrigger.refresh();
-    }, RM ? 400 : 1700);
-  });
+  var intro = document.getElementById('intro'), vS = document.getElementById('vSobre'), vT = document.getElementById('vTelar');
+  var started = false, done = false;
+  function finish(){
+    if (done) return; done = true;
+    intro.classList.add('gone');
+    document.body.classList.remove('locked');
+    document.getElementById('nav').classList.add('show');
+    if (HAS_GSAP){
+      ScrollTrigger.refresh();
+      if (!RM) gsap.fromTo('#hTxt > *', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 1.1, stagger: .18, ease: 'power2.out', delay: .2 });
+    }
+  }
+  function playTelar(){
+    intro.classList.add('telar');
+    vT.currentTime = 0;
+    var p = vT.play(); if (p && p.catch) p.catch(finish);
+    vT.addEventListener('ended', finish, { once: true });
+  }
+  function start(){
+    if (started) return; started = true;
+    intro.classList.add('playing');
+    if (RM){ finish(); return; }
+    vS.addEventListener('ended', playTelar, { once: true });
+    var p = vS.play(); if (p && p.catch) p.catch(finish);
+    setTimeout(finish, 16000);
+  }
+  document.getElementById('introTap').addEventListener('click', start);
+  intro.addEventListener('click', start);
 })();
 
 /* ── Fundido uniforme entre secciones ── */
