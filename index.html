@@ -13,6 +13,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://boda-jennifer-y-marcel.vercel.app">
+<link rel="preload" href="fonts/BodoniModa.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,500;0,600;1,500&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
@@ -468,6 +469,56 @@ main{box-shadow:none}
 .album-qr.bloqueado .qr-bg{filter:none;opacity:1}
 .album-qr .qr-bg{-webkit-mask-image:linear-gradient(transparent,#000 6%,#000 94%,transparent),linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(transparent,#000 6%,#000 94%,transparent),linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-composite:intersect}
 #hTxt.wait,#prologo .h-scroll.wait{opacity:0;visibility:hidden}
+
+/* ═════ UPGRADE VISUAL ═════ */
+@font-face{font-family:'Bodoni Moda';src:url('fonts/BodoniModa.woff2') format('woff2');font-weight:400 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Bodoni Moda';src:url('fonts/BodoniModa-Italic.woff2') format('woff2');font-weight:400 900;font-style:italic;font-display:swap}
+@font-face{font-family:'Cormorant Garamond';src:url('fonts/CormorantGaramond.woff2') format('woff2');font-weight:300 700;font-style:normal;font-display:swap}
+@font-face{font-family:'Cormorant Garamond';src:url('fonts/CormorantGaramond-Italic.woff2') format('woff2');font-weight:300 700;font-style:italic;font-display:swap}
+main > section,#epilogo{padding:56px 22px!important}
+#prologo,#bienvenida{padding:0!important}
+.ttl{font-variation-settings:'opsz' 72}
+.it{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:400;font-size:17px;line-height:1.75;color:#55534D}
+.date-line,.h-date{font-family:'Cormorant Garamond',serif;font-variant-numeric:oldstyle-nums;letter-spacing:.18em}
+/* separador: más fino y con puntas desvanecidas */
+.sep{max-width:300px;margin:-6px auto;padding:0}
+.sep img{-webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);opacity:.95}
+/* bordes suaves en todos los assets */
+.wisteria{-webkit-mask-image:linear-gradient(transparent 0,#000 16%,#000 82%,transparent),linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(transparent 0,#000 16%,#000 82%,transparent),linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-composite:intersect;margin:-56px -22px -50px!important}
+.art-cisnes .art-bg{-webkit-mask-image:linear-gradient(transparent,#000 5%,#000 95%,transparent),linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(transparent,#000 5%,#000 95%,transparent),linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);mask-composite:intersect}
+.guests,.engrave,.urna,.adults img,.float-env{-webkit-mask-image:radial-gradient(ellipse 52% 54% at 50% 50%,#000 86%,transparent 100%);mask-image:radial-gradient(ellipse 52% 54% at 50% 50%,#000 86%,transparent 100%)}
+.garland{margin:-56px -22px 0!important}
+#cuenta .ttl{margin-top:-46px}
+/* itinerario como la referencia: icono · línea punteada · texto */
+.tl{position:relative;max-width:360px;margin:26px auto 0;padding:6px 0}
+.tl-line{position:absolute;top:0;bottom:0;left:132px!important;width:0;margin:0;border-left:2px dotted #6E6B62;background:none}
+.tl-fill{display:none}
+.tl-pearl{position:absolute;left:121px!important;top:0;width:24px;z-index:3;filter:drop-shadow(0 2px 3px rgba(0,0,0,.18))}
+.tl-item{display:grid!important;grid-template-columns:110px 1fr!important;column-gap:52px;align-items:center;margin:0!important;min-height:150px}
+.tl-item .tl-ico{grid-column:1!important;grid-row:1!important;width:110px;height:110px;margin:0}
+.tl-item .tl-card{grid-column:2!important;grid-row:1!important;text-align:left!important;padding:0}
+.tl-time{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:23px;font-variant-numeric:oldstyle-nums;letter-spacing:.02em}
+.tl-ev{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:15px;letter-spacing:.2em;color:#55534D;line-height:1.5}
+/* una bola de color */
+.sw-one{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:16px}
+.sw-ball{position:relative;width:62px;height:62px;border-radius:50%;padding:4px;background:linear-gradient(145deg,#F7F3EA,#D9D2C3);box-shadow:0 0 0 1px rgba(140,122,85,.45),0 0 18px rgba(201,174,124,.45);transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.sw-ball i{position:relative;display:block;width:100%;height:100%;border-radius:50%;overflow:hidden;transition:background .45s ease;box-shadow:inset 0 2px 6px rgba(0,0,0,.25)}
+.sw-ball i::before{content:'';position:absolute;top:-30%;bottom:-30%;left:-70%;width:45%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.65),transparent);transform:rotate(18deg);animation:swSheen 3.2s ease-in-out infinite}
+.sw-ball i::after{content:'';position:absolute;left:50%;top:-4px;bottom:-4px;width:2px;margin-left:-1px;background:#3B3A36;transform:rotate(45deg);opacity:.75}
+.sw-ball.swap{transform:scale(.82) rotate(-25deg)}
+.sw-name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:16px;letter-spacing:.24em;text-transform:uppercase;color:#3B3A36;transition:opacity .4s}
+.sw-name.swap{opacity:0}
+.dc-avoid{font-family:'Cormorant Garamond',serif;font-weight:600;letter-spacing:.22em;color:#55534D}
+.guests{margin:10px auto 22px!important}
+.fam{margin-top:18px}
+.fam-block.oval{margin:-10px auto}
+.gift-card{margin-top:18px!important}
+.adults h3.caps{margin-top:0}
+.art-card .art-bg,.art-cisnes .art-bg,.album-qr .qr-bg{-webkit-mask-image:linear-gradient(transparent,#000 8%,#000 92%,transparent),linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(transparent,#000 8%,#000 92%,transparent),linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-composite:intersect}
+.gift-card .art-txt{left:25%!important;right:25%!important}
+.gift-card .it{font-size:15px!important;line-height:1.55}
+.gift-card .ttl{font-size:clamp(24px,6.4vw,32px)!important}
+.fam-block.oval::before{-webkit-mask-image:radial-gradient(ellipse 48% 48% at 50% 50%,#000 80%,transparent 100%);mask-image:radial-gradient(ellipse 48% 48% at 50% 50%,#000 80%,transparent 100%)}
 </style>
 </head>
 <body class="locked">
@@ -589,12 +640,9 @@ main{box-shadow:none}
   <p class="dc-main">Formal</p>
   <img class="guests" src="bordado/invitados.webp" alt="Invitados con vestimenta formal">
   <p class="dc-avoid">Por favor evitar estos colores</p>
-  <div class="dc-swatches" id="swatches">
-    <span class="sw"><i style="background:#B3261E"></i>Rojo</span>
-    <span class="sw"><i style="background:#1C1C1C"></i>Negro</span>
-    <span class="sw"><i style="background:linear-gradient(135deg,#E6C877,#B8913A)"></i>Dorado</span>
-    <span class="sw"><i style="background:#D9C7A7"></i>Beige</span>
-    <span class="sw"><i style="background:#FFFFFF"></i>Blanco</span>
+  <div class="sw-one" id="swOne" aria-live="polite">
+    <span class="sw-ball"><i></i></span>
+    <span class="sw-name" id="swName">Rojo</span>
   </div>
 </section>
 
@@ -907,24 +955,17 @@ function reveal(el, from, opts){
   reveal(document.getElementById('rsvp-bandeja'), { opacity: 0, y: 30 });
 })();
 
-/* ── Colores a evitar: se cruzan de lugar en bucle ── */
+/* ── Colores a evitar: una sola bola que cambia de color ── */
 (function(){
-  if (RM || !HAS_GSAP) return;
-  var sw = [].slice.call(document.querySelectorAll('#swatches .sw'));
-  var round = 0;
-  function cycle(){
-    var start = round % 2, tl = gsap.timeline();
-    for (var i = start; i + 1 < sw.length; i += 2){
-      var a = sw[i], b = sw[i + 1], d = b.offsetLeft - a.offsetLeft;
-      tl.to(a, { x: d, y: -10, duration: 1.1, ease: 'power2.inOut' }, 0).to(b, { x: -d, y: 10, duration: 1.1, ease: 'power2.inOut' }, 0)
-        .to([a, b], { y: 0, duration: .55, ease: 'sine.inOut' }, .55)
-        .to([a, b], { x: 0, duration: 1.1, ease: 'power2.inOut' }, 3.2);
-    }
-    round++;
-  }
-  ScrollTrigger.create({ trigger: '#swatches', start: 'top 90%', once: true, onEnter: function(){ cycle(); setInterval(cycle, 7000); } });
+  var C = [['Rojo','#B3261E'],['Negro','#1C1C1C'],['Dorado','linear-gradient(135deg,#E6C877,#B8913A)'],['Beige','#D9C7A7'],['Blanco','#FFFFFF']];
+  var ball = document.querySelector('#swOne .sw-ball i'), name = document.getElementById('swName'), k = 0;
+  function show(){ ball.style.background = C[k][1]; name.textContent = C[k][0]; }
+  show();
+  setInterval(function(){
+    ball.parentNode.classList.add('swap'); name.classList.add('swap');
+    setTimeout(function(){ k = (k + 1) % C.length; show(); ball.parentNode.classList.remove('swap'); name.classList.remove('swap'); }, 450);
+  }, 2200);
 })();
-
 
 /* ── Perla que baja por el itinerario ── */
 (function(){
