@@ -357,6 +357,116 @@ main{overflow-x:clip}
   .cover{transition-duration:.3s}
   html{scroll-behavior:auto}
 }
+
+/* ═════ ESTILO BORDADO (réplica referencia) ═════ */
+:root{--paper:#EFEBE2;--surface:#EFEBE2;--ink:#3B3A36;--ink-soft:#5A5852;--sage-deep:#4A5249;--sage:#6F8467}
+body,main,main > section,#epilogo,.sec-alt,.sec-mist{background:#EFEBE2!important}
+main{box-shadow:none}
+.ttl{font-family:'Bodoni Moda',var(--serif);font-weight:500;color:#3B3A36;font-size:clamp(32px,8.4vw,46px);line-height:1.18}
+.it{font-family:var(--serif);font-style:italic;font-weight:500;font-size:19px;line-height:1.6;color:#4A4945;text-align:center;max-width:440px;margin:14px auto 0}
+.it.sm{font-size:16px;margin-top:6px}
+.caps{font-family:var(--serif);font-weight:600;font-size:14px;letter-spacing:.28em;text-transform:uppercase;color:#4A4945;text-align:center;margin-top:12px}
+.caps.sm{font-size:13px;margin-top:4px}
+.art-sec{padding:0!important}
+.art{position:relative;max-width:520px;margin:0 auto}
+.art-bg{width:100%;display:block;-webkit-mask-image:linear-gradient(transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(transparent,#000 6%,#000 94%,transparent)}
+.art-card .art-bg{-webkit-mask-image:none;mask-image:none}
+.art-txt{position:absolute;left:14%;right:14%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.art-p{font-family:var(--serif);font-weight:500;font-size:clamp(16px,4.3vw,19px);letter-spacing:.06em;line-height:1.7;color:#4A4945;margin-top:16px}
+.names-big{font-size:clamp(36px,10vw,54px);margin:18px 0 6px}
+.names-big .and{font-size:.6em}
+.date-line{font-family:var(--serif);font-weight:600;font-size:19px;color:#3B3A36;text-align:center;margin-top:18px}
+.fam{gap:6px;margin-top:30px}
+.fam-block.oval{position:relative;aspect-ratio:896/1200;width:min(330px,88%);margin:0 auto;padding:0;background:url('bordado/ovalo.webp') center/contain no-repeat;border:none;box-shadow:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.fam-block.oval h3{font-family:var(--serif);font-weight:600;font-size:14px;letter-spacing:.24em;color:#6F8467}
+.fam-name{font-family:'Bodoni Moda',var(--serif);font-weight:500;font-size:clamp(21px,5.6vw,26px);color:#3B3A36}
+.fam-amp{font-family:var(--serif);font-style:italic;color:#8C7A55}
+.sep{max-width:560px;margin:0 auto;padding:0 18px}
+.sep img{width:100%;mix-blend-mode:multiply}
+.garland{display:block;width:calc(100% + 44px);max-width:none;margin:-60px -22px 0;mix-blend-mode:multiply;-webkit-mask-image:linear-gradient(#000 55%,transparent);mask-image:linear-gradient(#000 55%,transparent)}
+#cuenta .ttl{margin-top:-40px}
+.cd{grid-template-columns:repeat(2,1fr);gap:18px 22px;max-width:340px;margin-top:30px}
+@media(min-width:520px){.cd{grid-template-columns:repeat(4,1fr);max-width:560px}}
+.cd-cell{aspect-ratio:1;background:url('bordado/medallon.webp') center/contain no-repeat;border:none;padding:0;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:visible;mix-blend-mode:multiply}
+.cd-cell::after{display:none}
+.cd-num{font-family:'Bodoni Moda',var(--serif);font-weight:500;color:#3B3A36;font-size:clamp(34px,10vw,46px)}
+.cd-lbl{font-family:var(--serif);font-weight:600;font-size:12px;letter-spacing:.2em;color:#5A5852;margin-top:4px}
+.venue-name{font-family:'Bodoni Moda',var(--serif);font-weight:500;font-size:clamp(22px,6vw,28px);color:#3B3A36;margin-top:12px}
+.times-line{font-family:var(--serif);font-weight:600;font-size:16px;line-height:1.6;color:#3B3A36;margin-top:12px}
+.link-caps{margin-top:14px;font-family:var(--serif);font-weight:600;font-size:14px;letter-spacing:.24em;text-transform:uppercase;color:#3B3A36;text-decoration:none;border-bottom:1px solid #8C7A55;padding:8px 2px}
+.tl{max-width:380px;margin-top:36px}
+.tl-line,.tl-fill{left:132px}
+.tl-line{background:none;border-left:2px dotted #8C8778;width:0}
+.tl-fill{background:#B7A98A;opacity:.6}
+.tl-pearl{position:absolute;left:121px;top:0;width:24px;z-index:2;mix-blend-mode:multiply}
+.tl-item{display:grid;grid-template-columns:110px 1fr;gap:44px;align-items:center;margin:28px 0}
+.tl-ico{width:110px;height:110px;border:none;background:none;border-radius:0}
+.tl-ico img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.tl-item .tl-card{grid-column:2!important;grid-row:1!important;text-align:left!important}
+.tl-time{font-family:'Bodoni Moda',var(--serif);font-weight:500;font-size:22px;color:#3B3A36}
+.tl-ev{font-family:var(--serif);font-weight:600;font-size:15px;letter-spacing:.2em;text-transform:uppercase;color:#4A4945;margin-top:4px}
+.wisteria{display:block;width:calc(100% + 44px);max-width:none;margin:-96px -22px -40px;mix-blend-mode:multiply}
+.mini-rule{width:60px;height:1px;background:#8C8778;margin:14px auto}
+.dc-main{font-family:'Bodoni Moda',var(--serif);font-style:normal;font-weight:500;font-size:clamp(30px,8vw,40px);color:#3B3A36}
+.guests{display:block;width:100%;max-width:520px;margin:18px auto 26px;mix-blend-mode:multiply}
+#hospedaje .lead,#galeria .gal-hint{font-family:var(--serif)}
+.hosp-photo{position:relative;width:250px;height:250px;border:none;box-shadow:none;background:url('bordado/marco-hotel.webp') center/contain no-repeat;border-radius:0;overflow:visible;display:flex;align-items:center;justify-content:center}
+.hosp-photo img{width:62%;height:62%;border-radius:50%;object-fit:cover}
+.hosp-arrow{top:125px}
+.wc-refl::after{background:linear-gradient(to top,rgba(239,235,226,.25) 0%,rgba(239,235,226,.85) 35%,#EFEBE2 62%)}
+.adults{background:none;border:none;max-width:460px}
+.adults img{width:min(300px,80%);margin:0 auto 6px;mix-blend-mode:multiply}
+.adults p{font-family:var(--serif);font-style:italic;font-size:19px}
+.gift-card{margin-top:40px;max-width:440px}
+.float-env{display:block;width:min(200px,52%);margin:-10px auto 0;mix-blend-mode:multiply;animation:envFloat 5s ease-in-out infinite}
+@keyframes envFloat{0%,100%{translate:0 0;rotate:-3deg}50%{translate:0 -10px;rotate:3deg}}
+.qr-frame{position:relative;width:270px;height:270px}
+.qr-bg{position:absolute;inset:0;width:100%;height:100%}
+.qr-code{position:absolute;left:22%;top:22%;width:56%;height:56%;padding:6px;background:#fff;border-radius:6px;border:none}
+.album-qr.bloqueado .qr-code{filter:blur(7px);opacity:.75}
+.album-qr img{width:auto;height:auto;padding:0;border:none;background:none}
+.urna{display:block;width:min(170px,44%);margin:0 auto 6px;mix-blend-mode:multiply}
+.rsvp-hi{font-family:'Bodoni Moda',var(--serif);font-weight:500}
+.rsvp-pases,.rsvp-gracias{background:#F6F3EC}
+.rsvp-btn{background:#4A5249;letter-spacing:.24em}
+#epilogo{background:#EFEBE2!important;color:#3B3A36;padding-bottom:120px}
+.ft-names{font-family:'Bodoni Moda',var(--serif);font-style:normal;font-weight:500;color:#3B3A36;font-size:clamp(34px,9vw,52px)}
+.ft-date{color:#5A5852;font-family:var(--serif);letter-spacing:.3em}
+.engrave{display:block;width:100%;max-width:520px;margin:26px auto 0;mix-blend-mode:multiply}
+.el-credit{color:#6F8467}
+.nav{background:rgba(239,235,226,.78)}
+
+/* ajustes bordado v2 */
+.sep img,.garland,.cd-cell,.tl-ico img,.wisteria,.guests,.adults img,.float-env,.urna,.engrave,.tl-pearl{mix-blend-mode:normal}
+.art-cisnes .art-txt{left:21%;right:21%}
+.art-cisnes .ttl{font-size:clamp(28px,7.6vw,40px)}
+.art-p{font-size:clamp(15px,4vw,18px);letter-spacing:.03em}
+.fam-block.oval{background:none;width:min(360px,92%)}
+.fam-block.oval::before{content:'';position:absolute;inset:0;z-index:-1;background:url('bordado/ovalo.webp') center/contain no-repeat;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 78%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 78%,transparent 100%)}
+.fam-block.oval{isolation:isolate}
+.fam-block.oval h3{font-size:12.5px;letter-spacing:.16em;margin:22px 0 6px;padding:0 24%}
+.fam-name{font-size:clamp(19px,5.2vw,24px);padding:0 22%;text-align:center;line-height:1.25}
+#celebracion .art-txt{left:17%;right:17%}
+.caps{font-size:12.5px;letter-spacing:.2em}
+.caps.sm{font-size:11.5px;letter-spacing:.16em}
+.times-line{font-size:15px}
+.gift-card .art-txt{left:20%;right:20%;top:15%!important;bottom:20%!important}
+.gift-card .ttl{font-size:clamp(26px,7vw,36px)}
+.gift-card .it{font-size:clamp(15px,4.1vw,17px);line-height:1.5}
+.album-qr .qr-frame{width:270px;height:270px}
+.album-qr .qr-bg{position:absolute;inset:0;width:100%;height:100%;-webkit-mask-image:radial-gradient(#000 62%,transparent 72%);mask-image:radial-gradient(#000 62%,transparent 72%)}
+.album-qr .qr-code{position:absolute;left:24%;top:24%;width:52%;height:52%;padding:6px;background:#fff;border-radius:6px}
+.album-qr.bloqueado .qr-code{filter:blur(7px);opacity:.75}
+.garland{-webkit-mask-image:linear-gradient(#000 50%,transparent),linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(#000 50%,transparent),linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-composite:intersect}
+.hosp-photo{background:none;isolation:isolate}
+.hosp-photo::before{content:'';position:absolute;inset:0;z-index:-1;background:url('bordado/marco-hotel.webp') center/contain no-repeat;-webkit-mask-image:radial-gradient(circle,#000 62%,transparent 71%);mask-image:radial-gradient(circle,#000 62%,transparent 71%)}
+.tl-ico{width:120px;height:120px}
+.tl-item{grid-template-columns:120px 1fr}
+.tl-line,.tl-fill{left:142px}.tl-pearl{left:131px}
+.art-card .art-bg{-webkit-mask-image:linear-gradient(transparent,#000 3%,#000 97%,transparent),linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(transparent,#000 3%,#000 97%,transparent),linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent);mask-composite:intersect}
+.engrave{-webkit-mask-image:radial-gradient(ellipse 50% 50%,#000 75%,transparent);mask-image:radial-gradient(ellipse 50% 50%,#000 75%,transparent)}
+.album-qr.bloqueado .qr-bg{filter:none;opacity:1}
+.album-qr .qr-bg{-webkit-mask-image:linear-gradient(transparent,#000 6%,#000 94%,transparent),linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(transparent,#000 6%,#000 94%,transparent),linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-composite:intersect}
 </style>
 </head>
 <body class="locked">
@@ -392,87 +502,91 @@ main{overflow-x:clip}
   <div class="h-scroll" aria-hidden="true">Desliza<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
 </section>
 
-<section id="familia" class="sec-alt has-ink" data-nav="Familia">
-  <div class="ink-bg"><i style="background-image:url('ink/top.webp')"></i></div>
-  <span class="chap">Capítulo I</span>
-  <h2 class="ttl split">Con la bendición de Dios</h2>
-  <div class="orn"><svg viewBox="0 0 150 22"><path class="draw" d="M2 11 H58 M92 11 H148 M75 3 C68 11 68 11 75 19 C82 11 82 11 75 3 Z M62 11 a3 3 0 1 0 0.1 0 M88 11 a3 3 0 1 0 0.1 0"/></svg></div>
-  <p class="dropcap">Hay historias que se escriben con viajes, risas y kilómetros de por medio. La nuestra encontró su camino entre dos países y un mismo corazón. Con la bendición de Dios y de nuestros padres, tenemos el honor de invitarte a la celebración de nuestro matrimonio.</p>
+<section id="bienvenida" class="art-sec" data-nav="Bienvenida">
+  <div class="art art-cisnes">
+    <img class="art-bg" src="bordado/cisnes.webp" alt="">
+    <div class="art-txt" style="top:30%;bottom:38%">
+      <h2 class="ttl split">Bienvenidos a nuestra boda</h2>
+      <p class="art-p">Estamos felices de celebrar este día tan especial contigo, rodeados de las personas que más queremos.</p>
+    </div>
+  </div>
+</section>
+
+<section id="familia" data-nav="Familia">
+  <p class="it">Con la bendición de Dios y de nuestros padres</p>
+  <h2 class="ttl names-big">Jennifer<br><span class="and">y</span><br>Marcel Förderer</h2>
+  <p class="it">tenemos el honor de invitarte a celebrar nuestro matrimonio</p>
+  <p class="date-line">Sábado, 10 de abril de 2027</p>
   <div class="fam">
-    <div class="fam-block lev">
+    <div class="fam-block oval lev">
       <h3>Padres de la novia</h3>
       <span class="fam-name st">Elizabeth Joo</span><span class="fam-amp st">y</span><span class="fam-name st">Alberto Trujillo</span>
     </div>
-    <div class="fam-block lev d1">
+    <div class="fam-block oval lev d1">
       <h3>Padres del novio</h3>
       <span class="fam-name st">Manfred Förderer</span><span class="fam-amp st">y</span><span class="fam-name st">Kerstin Plutzen</span>
     </div>
-    <div class="fam-block lev d2">
+    <div class="fam-block oval lev d2">
       <h3>Padrinos</h3>
       <span class="fam-name st">Mónica Azañero</span><span class="fam-amp st">y</span><span class="fam-name st">Alcides Azañero</span>
     </div>
   </div>
 </section>
 
-<section id="cuenta" class="has-ink" data-nav="Cuenta regresiva">
-  <div class="ink-bg flip"><i style="background-image:url('ink/corner.webp')"></i></div>
-  <span class="chap">Capítulo II</span>
-  <h2 class="ttl split">Faltan muy pocas páginas</h2>
+<div class="sep" aria-hidden="true"><img src="bordado/separador.webp" alt=""></div>
+
+<section id="cuenta" data-nav="Cuenta regresiva">
+  <img class="garland" src="bordado/guirnalda.webp" alt="">
+  <h2 class="ttl split">Cuenta regresiva</h2>
   <div class="cd" role="timer" aria-live="off">
     <div class="cd-cell"><span class="cd-num" id="cd-d">--</span><span class="cd-lbl">Días</span></div>
     <div class="cd-cell"><span class="cd-num" id="cd-h">--</span><span class="cd-lbl">Horas</span></div>
-    <div class="cd-cell"><span class="cd-num" id="cd-m">--</span><span class="cd-lbl">Min</span></div>
-    <div class="cd-cell" id="cd-scell"><span class="cd-num" id="cd-s">--</span><span class="cd-lbl">Seg</span></div>
+    <div class="cd-cell"><span class="cd-num" id="cd-m">--</span><span class="cd-lbl">Minutos</span></div>
+    <div class="cd-cell" id="cd-scell"><span class="cd-num" id="cd-s">--</span><span class="cd-lbl">Segundos</span></div>
   </div>
-  <p class="cd-date">Sábado 10 de abril de 2027 · 12:00 del mediodía</p>
 </section>
 
-<section id="celebracion" class="sec-mist has-ink" data-nav="Celebración">
-  <div class="ink-bg oval"><i style="background-image:url('ink/oval.webp')"></i></div>
-  <span class="chap">Capítulo III</span>
-  <h2 class="ttl split">El lugar de la historia</h2>
-  <div class="venue tilt lev" id="venueCard">
-    <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
-    <h3>Finca Bella Mar</h3>
-    <p class="addr">Av. Industrial, Nuevo Chimbote, Perú</p>
-    <div class="times">
-      <div><div class="t-lbl">Ceremonia religiosa</div><div class="t-val">12:00 pm</div></div>
-      <i></i>
-      <div><div class="t-lbl">Recepción</div><div class="t-val">1:00 pm</div></div>
+<section id="celebracion" data-nav="Celebración">
+  <div class="art art-card lev" id="venueCard">
+    <img class="art-bg" src="bordado/ceremonia.webp" alt="">
+    <div class="art-txt" style="top:24%;bottom:7%">
+      <h2 class="ttl" style="font-size:clamp(28px,7.4vw,40px)">Ceremonia<br>&amp; Recepción</h2>
+      <p class="caps">Donde celebramos</p>
+      <h3 class="venue-name">Finca Bella Mar</h3>
+      <p class="caps sm">Nuevo Chimbote · Perú</p>
+      <p class="it sm">Sábado, 10 de abril de 2027</p>
+      <p class="times-line">Ceremonia religiosa · 12:00 pm<br>Recepción · 1:00 pm</p>
+      <a class="link-caps" href="https://maps.app.goo.gl/2D5BiFfaF8GohSfT9" target="_blank" rel="noopener">◎ Ver en Maps</a>
     </div>
-    <a class="btn btn-solid" href="https://maps.app.goo.gl/2D5BiFfaF8GohSfT9" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>Cómo llegar</a>
   </div>
-  <p class="note">La ceremonia y la recepción se realizan en el mismo lugar: no necesitas trasladarte.</p>
+  <p class="it" style="margin-top:22px">La ceremonia y la recepción son en el mismo lugar.</p>
 </section>
 
-<section id="itinerario" class="has-ink" data-nav="Itinerario">
-  <div class="ink-bg"><i style="background-image:url('ink/corner.webp')"></i></div>
-  <span class="chap">Capítulo IV</span>
-  <h2 class="ttl split">El orden del día</h2>
+<div class="sep" aria-hidden="true"><img src="bordado/separador.webp" alt=""></div>
+
+<section id="itinerario" data-nav="Itinerario">
+  <h2 class="ttl split">Itinerario</h2>
   <div class="tl" id="tl">
     <div class="tl-line"></div><div class="tl-fill" id="tlFill"></div>
-    <div class="tl-item l">
-      <div class="tl-card"><div class="tl-time">12:00 pm</div><div class="tl-ev">Ceremonia religiosa</div></div>
-      <div class="tl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M9 5h6M5 22V12l7-4 7 4v10M9 22v-5a3 3 0 0 1 6 0v5"/></svg></div>
+    <img class="tl-pearl" id="tlPearl" src="bordado/perla.webp" alt="">
+    <div class="tl-item">
+      <div class="tl-ico"><img src="bordado/capilla.webp" alt=""></div>
+      <div class="tl-card"><div class="tl-time">12:00 PM</div><div class="tl-ev">Ceremonia religiosa</div></div>
     </div>
-    <div class="tl-item r">
-      <div class="tl-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l-1 7a3 3 0 0 1-6 0L8 2zM12 12v8M8 22h8"/></svg></div>
-      <div class="tl-card"><div class="tl-time">1:00 pm</div><div class="tl-ev">Recepción</div></div>
+    <div class="tl-item">
+      <div class="tl-ico"><img src="bordado/copas.webp" alt=""></div>
+      <div class="tl-card"><div class="tl-time">1:00 PM</div><div class="tl-ev">Recepción</div></div>
     </div>
   </div>
-  <p class="note">Ambos momentos son en Finca Bella Mar.</p>
+  <p class="it">Ambos momentos son en Finca Bella Mar.</p>
 </section>
 
-<section id="dresscode" class="sec-alt has-ink" data-nav="Vestimenta">
-  <div class="ink-bg flip"><i style="background-image:url('ink/hero.webp')"></i></div>
-  <span class="chap">Capítulo V · Código de vestimenta</span>
+<section id="dresscode" data-nav="Vestimenta">
+  <img class="wisteria" src="bordado/glicinias.webp" alt="">
+  <h2 class="ttl split">Código de vestimenta</h2>
+  <div class="mini-rule"></div>
   <p class="dc-main">Formal</p>
-  <p class="dc-note">Acompáñanos vestido para la ocasión</p>
-  <div class="dc-figures">
-    <div class="dc-fig"><img class="lev" src="caballero.png" alt="Caballero con traje formal"><span class="dc-fig-label">Caballeros</span></div>
-    <div class="dc-fig"><img class="lev d1" src="dama.png" alt="Dama con vestido largo"><span class="dc-fig-label">Damas</span></div>
-  </div>
+  <img class="guests" src="bordado/invitados.webp" alt="Invitados con vestimenta formal">
   <p class="dc-avoid">Por favor evitar estos colores</p>
   <div class="dc-swatches" id="swatches">
     <span class="sw"><i style="background:#B3261E"></i>Rojo</span>
@@ -483,9 +597,10 @@ main{overflow-x:clip}
   </div>
 </section>
 
+<div class="sep" aria-hidden="true"><img src="bordado/separador.webp" alt=""></div>
+
 <section id="hospedaje" data-nav="Hospedaje">
-  <span class="chap">Capítulo VI</span>
-  <h2 class="ttl split">Dónde quedarse</h2>
+    <h2 class="ttl split">Dónde quedarse</h2>
   <p class="lead">Si vienes de fuera, estas opciones están muy cerca de Finca Bella Mar.</p>
   <div class="seg" id="seg">
     <span class="seg-pill" id="segPill"></span>
@@ -524,8 +639,7 @@ main{overflow-x:clip}
 </section>
 
 <section id="galeria" class="sec-alt" data-nav="Galería">
-  <span class="chap">Capítulo VII</span>
-  <h2 class="ttl split">Páginas de nuestra historia</h2>
+    <h2 class="ttl split">Nuestra historia en fotos</h2>
   <div class="wheel-scene" id="wheelScene">
     <div class="wheel-ring" id="wheelRing"></div>
   </div>
@@ -533,62 +647,37 @@ main{overflow-x:clip}
 </section>
 <div id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada"><button type="button" aria-label="Cerrar">✕</button><img alt=""></div>
 
-<section id="regalos" class="has-ink" data-nav="Regalos">
-  <div class="ink-bg oval"><i style="background-image:url('ink/oval.webp')"></i></div>
-  <div class="env-rain" id="envRain" aria-hidden="true"></div>
+
+<section id="regalos" data-nav="Regalos">
   <div class="adults lev">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l-1 7a3 3 0 0 1-6 0L8 2zM12 12v8M8 22h8"/></svg>
-    <span class="chap" style="margin-bottom:10px">Solo adultos</span>
+    <img src="bordado/adultos.webp" alt="">
+    <h3 class="caps">Solo adultos</h3>
     <p>Con todo cariño, hemos pensado esta celebración solo para adultos. Gracias por comprenderlo y por acompañarnos.</p>
   </div>
-  <div style="height:80px"></div>
-  <div class="env-stage" id="envStage">
-    <span class="chap">Capítulo VIII</span>
-    <h2 class="ttl split">Lluvia de sobres</h2>
-    <button class="env-interactive" id="envGift" type="button" aria-label="Sobre: toca para abrir" aria-expanded="false">
-      <div class="env-body" id="envGiftBody">
-        <svg class="env-svg" viewBox="0 0 260 200" preserveAspectRatio="none" aria-hidden="true">
-          <defs><linearGradient id="envPaper" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#FBF6EA"/><stop offset="100%" stop-color="#F2EAD6"/></linearGradient></defs>
-          <rect x="18" y="52" width="224" height="132" rx="8" fill="url(#envPaper)" stroke="#9A7B4C" stroke-width="1.6"/>
-          <path d="M18 184 L130 110 L242 184" stroke="rgba(154,123,76,.55)" stroke-width="1.1" fill="none"/>
-        </svg>
-        <div class="env-flap-wrap" aria-hidden="true">
-          <svg viewBox="0 0 224 86" preserveAspectRatio="none" style="width:100%;height:100%;display:block">
-            <defs><linearGradient id="envFlap" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#F2EAD6"/><stop offset="100%" stop-color="#FCF8EE"/></linearGradient></defs>
-            <path d="M0 0 L112 86 L224 0 Z" fill="url(#envFlap)" stroke="#9A7B4C" stroke-width="1.6" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <svg class="env-seal" viewBox="0 0 60 60" aria-hidden="true">
-          <circle cx="30" cy="30" r="28" fill="#3F4F39"/>
-          <circle cx="30" cy="30" r="21.5" fill="none" stroke="#D9C99F" stroke-width="1.1"/>
-          <text x="30" y="36.5" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-weight="700" font-size="18" fill="#E8DCB8">J&amp;M</text>
-        </svg>
-      </div>
-      <div class="env-open-content" aria-live="polite">
-        <svg class="env-mailbox-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="8" y="22" width="36" height="24" rx="5"/><path d="M8 30 Q26 38 44 30"/><rect x="18" y="8" width="16" height="16" rx="2"/><path d="M18 8 Q26 3 34 8"/></svg>
-        <p class="env-title">Tu presencia es nuestro regalo</p>
-        <p class="env-desc">Si además deseas tener un detalle con nosotros, el día de la boda habrá un buzón especial para recibir tu sobre.</p>
-      </div>
-    </button>
-    <button class="env-tap-hint" id="envGiftHint" type="button">Toca para abrir</button>
+  <div class="art art-card gift-card lev d1">
+    <img class="art-bg" src="bordado/marco-regalos.webp" alt="">
+    <div class="art-txt" style="top:16%;bottom:24%">
+      <h2 class="ttl split">Lluvia de sobres</h2>
+      <p class="it">Tu presencia es nuestro mejor regalo. Si además deseas tener un detalle con nosotros, el día de la boda habrá un buzón especial para recibir tu sobre.</p>
+    </div>
   </div>
+  <img class="float-env" src="bordado/sobre-sello.webp" alt="Sobre con sello J&amp;M">
 </section>
 
-<section id="album" class="sec-mist has-ink" data-nav="Álbum">
-  <div class="ink-bg flip"><i style="background-image:url('ink/footer.webp')"></i></div>
-  <span class="chap">Capítulo IX</span>
+<div class="sep" aria-hidden="true"><img src="bordado/separador.webp" alt=""></div>
+
+<section id="album" data-nav="Álbum">
   <h2 class="ttl split">Álbum de fotos</h2>
-  <p class="lead">Ayúdanos a guardar cada momento: sube aquí las fotos que tomes durante el evento.</p>
+  <p class="it">Ayúdanos a guardar cada momento: sube aquí las fotos que tomes durante el evento.</p>
   <div class="album-qr bloqueado" id="albumQr" data-fecha="2027-04-10">
-    <img src="qr-album.png" alt="Código QR del álbum de fotos" width="220" height="220">
+    <div class="qr-frame"><img class="qr-bg" src="bordado/marco-qr.webp" alt=""><img class="qr-code" src="qr-album.png" alt="Código QR del álbum de fotos"></div>
     <a class="btn btn-solid" href="/album">Subir mis fotos</a>
   </div>
   <p class="album-aviso">El álbum de fotos se habilita el día del evento. Regresa aquí y sube todas tus fotos de la celebración.</p>
 </section>
 
-<section id="rsvp" class="has-ink" data-nav="Confirmar">
-  <div class="ink-bg flip"><i style="background-image:url('ink/top.webp')"></i></div>
-  <span class="chap">Capítulo X</span>
+<section id="rsvp" data-nav="Confirmar">
+  <img class="urna" src="bordado/urna.webp" alt="">
   <h2 class="ttl split">Confirma tu asistencia</h2>
   <p class="rsvp-hi" id="rsvp-hi" style="display:none"></p>
   <p id="rsvp-pases-note"></p>
@@ -616,9 +705,9 @@ main{overflow-x:clip}
 </main>
 
 <footer id="epilogo">
-  <p class="ft-fin">Fin del prólogo. Lo mejor está por escribirse.</p>
   <p class="ft-names">Jennifer &amp; Marcel</p>
-  <p class="ft-date">10 · Abril · 2027 · Chimbote</p>
+  <p class="ft-date">10 · abril · 2027</p>
+  <img class="engrave" src="bordado/grabado.webp" alt="">
   <a class="el-credit" href="https://www.instagram.com/elysium.invitaciones" target="_blank" rel="noopener">Diseño por @elysium.invitaciones</a>
 </footer>
 
@@ -833,6 +922,14 @@ function reveal(el, from, opts){
   ScrollTrigger.create({ trigger: '#swatches', start: 'top 90%', once: true, onEnter: function(){ cycle(); setInterval(cycle, 7000); } });
 })();
 
+
+/* ── Perla que baja por el itinerario ── */
+(function(){
+  if (!HAS_GSAP || RM) return;
+  gsap.fromTo('#tlPearl', { y: 0 }, { y: function(){ return document.getElementById('tl').offsetHeight - 24; }, ease: 'none',
+    scrollTrigger: { trigger: '#tl', start: 'top 70%', end: 'bottom 50%', scrub: true, invalidateOnRefresh: true } });
+})();
+
 /* ── Galería: carrusel 3D con espejo ── */
 (function(){
   var PH = ['f6.jpg','f1.jpg','f4.jpg','f3.jpg','f2.jpg','f5.jpg'];
@@ -877,59 +974,6 @@ function reveal(el, from, opts){
 (function(){
   var q = document.getElementById('albumQr');
   if (new Date() >= new Date(q.dataset.fecha + 'T00:00:00-05:00')) q.classList.remove('bloqueado');
-})();
-
-/* ── Lluvia de sobres: no se detiene; un sobre aterriza al centrar la sección ── */
-(function(){
-  var sec = document.getElementById('regalos'), rain = document.getElementById('envRain'),
-      btn = document.getElementById('envGift'), body = document.getElementById('envGiftBody'),
-      hint = document.getElementById('envGiftHint');
-  var landed = false, landing = false, alive = 0, MAX = 22, inView = false, spawnT = null;
-  function makeEnvelope(){
-    if (!inView || alive >= MAX || !HAS_GSAP) return;
-    alive++;
-    var depth = Math.random(), w = 14 + depth * 24;
-    var el = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    el.setAttribute('viewBox', '0 0 34 24'); el.setAttribute('class', 'env-rain-item');
-    el.style.width = w + 'px'; el.style.height = (w * 24 / 34) + 'px';
-    el.style.left = (Math.random() * 100) + '%';
-    el.innerHTML = '<rect x="1" y="1" width="32" height="22" rx="2.5" fill="#FBF6EA" stroke="#9A7B4C" stroke-width="1.3"/>' +
-      '<path d="M1 1 L17 13 L33 1" fill="#F2EAD6" stroke="#9A7B4C" stroke-width="1.3" stroke-linejoin="round"/>' +
-      '<circle cx="17" cy="13" r="3.2" fill="#3F4F39"/>';
-    rain.appendChild(el);
-    var H = sec.offsetHeight + 80, dur = 11 - depth * 5 + Math.random() * 2, op = .35 + depth * .5;
-    gsap.timeline({ onComplete: function(){ el.remove(); alive--; } })
-      .fromTo(el, { y: -50, x: 0, rotation: (Math.random() - .5) * 50 }, { y: H, x: (Math.random() - .5) * 80, rotation: (Math.random() - .5) * 200, duration: dur, ease: 'none' }, 0)
-      .fromTo(el, { opacity: 0 }, { opacity: op, duration: dur * .15 }, 0)
-      .to(el, { opacity: 0, duration: dur * .2 }, dur * .8);
-  }
-  function loop(){ makeEnvelope(); spawnT = setTimeout(loop, 420); }
-  if (!RM) new IntersectionObserver(function(es){
-    inView = es[0].isIntersecting;
-    if (inView && !spawnT){ for (var i = 0; i < 6; i++) setTimeout(makeEnvelope, i * 200); loop(); }
-    if (!inView && spawnT){ clearTimeout(spawnT); spawnT = null; }
-  }).observe(sec);
-
-  function land(cb){
-    if (landed){ if (cb) cb(); return; }
-    if (landing) return; landing = true;
-    var done = function(){ landed = true; landing = false; body.classList.add('landed'); if (cb) cb(); };
-    if (!HAS_GSAP || RM){ done(); return; }
-    gsap.fromTo(btn, { opacity: 0, y: -150, rotation: -12, scale: .82 }, { opacity: 1, y: 0, rotation: 0, scale: 1, duration: 1.15, ease: 'back.out(1.5)', onComplete: done });
-  }
-  if (HAS_GSAP && !RM) ScrollTrigger.create({ trigger: '#envStage', start: 'center 60%', once: true, onEnter: function(){ land(); } });
-  function toggle(e){
-    if (e) e.preventDefault();
-    land(function(){
-      var open = btn.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      body.classList.toggle('landed', !open);
-      hint.textContent = open ? 'Toca para cerrar' : 'Toca para abrir';
-      if (HAS_GSAP) setTimeout(function(){ ScrollTrigger.refresh(); }, 900);
-    });
-  }
-  btn.addEventListener('click', toggle);
-  hint.addEventListener('click', toggle);
 })();
 
 /* ── Hospedaje: lista (carrusel) / mapa (Leaflet + Esri) ── */
