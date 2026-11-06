@@ -105,12 +105,14 @@ main > section, #epilogo{position:relative;isolation:isolate;padding:clamp(96px,
 .sheet-foot{text-align:center;font-family:var(--sans);font-weight:600;font-size:12.5px;letter-spacing:3px;text-transform:uppercase;color:var(--ink-soft);margin-top:24px}
 
 /* ═════ PORTADA: sobre → telar → nombres ═════ */
-#intro{position:fixed;inset:0;z-index:9999;background:#E9E3D6;display:flex;justify-content:center;transition:opacity .9s ease,visibility 0s linear .9s}
+#intro{position:fixed;left:0;right:0;top:0;height:100svh;z-index:9999;background:#E9E3D6;display:flex;justify-content:center;transition:opacity 1.2s cubic-bezier(.4,0,.2,1),visibility 0s linear 1.2s}
 #intro.gone{opacity:0;visibility:hidden}
 .intro-box{position:relative;width:100%;max-width:680px;height:100%;overflow:hidden}
 .intro-box video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#E9E3D6}
-#vTelar{opacity:0}
-#intro.telar #vTelar{opacity:1}
+#vSobre{z-index:2;transition:opacity .55s ease-in-out}
+#vTelar{z-index:1}
+#intro.telar #vSobre{opacity:0}
+.intro-tap{z-index:3}
 .intro-tap{position:absolute;left:50%;bottom:max(34px,env(safe-area-inset-bottom));transform:translateX(-50%);min-height:50px;padding:12px 28px;border-radius:999px;border:1.5px solid rgba(245,240,228,.9);background:rgba(63,79,57,.55);color:#F7F2E6;font-family:var(--sans);font-weight:600;font-size:14px;letter-spacing:3px;text-transform:uppercase;white-space:nowrap;cursor:pointer;animation:breathe 3s ease-in-out infinite;transition:opacity .4s}
 #intro.playing .intro-tap{opacity:0;pointer-events:none}
 @keyframes breathe{0%,100%{box-shadow:0 0 0 0 rgba(245,240,228,.45)}50%{box-shadow:0 0 0 12px rgba(245,240,228,0)}}
@@ -633,33 +635,36 @@ var RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var HAS_GSAP = !!(window.gsap && window.ScrollTrigger);
 if (HAS_GSAP) gsap.registerPlugin(ScrollTrigger);
 
-/* ── Portada: sobre → telar → nombres ── */
+/* ── Portada: sobre → telar → nombres (cambios con fundido, sin cortes) ── */
 (function(){
   var intro = document.getElementById('intro'), vS = document.getElementById('vSobre'), vT = document.getElementById('vTelar');
-  var started = false, done = false;
+  var started = false, handed = false, done = false;
+  vT.pause(); try { vT.currentTime = 0; } catch(e){}
   function finish(){
     if (done) return; done = true;
-    intro.classList.add('gone');
+    window.scrollTo(0, 0);
     document.body.classList.remove('locked');
-    document.getElementById('nav').classList.add('show');
+    intro.classList.add('gone');
+    setTimeout(function(){ document.getElementById('nav').classList.add('show'); }, 700);
     if (HAS_GSAP){
       ScrollTrigger.refresh();
-      if (!RM) gsap.fromTo('#hTxt > *', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 1.1, stagger: .18, ease: 'power2.out', delay: .2 });
+      if (!RM) gsap.fromTo('#hTxt > *', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 1.4, stagger: .2, ease: 'power2.out', delay: .35 });
     }
   }
-  function playTelar(){
-    intro.classList.add('telar');
-    vT.currentTime = 0;
+  function handoff(){
+    if (handed) return; handed = true;
     var p = vT.play(); if (p && p.catch) p.catch(finish);
-    vT.addEventListener('ended', finish, { once: true });
+    intro.classList.add('telar');
   }
+  vS.addEventListener('timeupdate', function(){ if (vS.duration && vS.currentTime >= vS.duration - 0.55) handoff(); });
+  vS.addEventListener('ended', handoff);
+  vT.addEventListener('ended', function(){ setTimeout(finish, 250); });
   function start(){
     if (started) return; started = true;
     intro.classList.add('playing');
     if (RM){ finish(); return; }
-    vS.addEventListener('ended', playTelar, { once: true });
     var p = vS.play(); if (p && p.catch) p.catch(finish);
-    setTimeout(finish, 16000);
+    setTimeout(finish, 14000);
   }
   document.getElementById('introTap').addEventListener('click', start);
   intro.addEventListener('click', start);
@@ -689,7 +694,7 @@ function initSectionFades(){
     var a = edge(A, 'bot'), b = edge(B, 'top');
     var mid = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2, (a[2] + b[2]) / 2];
     var hA = A.id === 'prologo' ? 90 : 170, hB = A.id === 'prologo' ? 90 : 170;
-    css += '#' + A.id + '::after{content:"";position:absolute;left:0;right:0;bottom:0;height:' + hA + 'px;z-index:-1;pointer-events:none;background:' + grad('to top', mid) + '}';
+    if (A.id !== 'prologo') css += '#' + A.id + '::after{content:"";position:absolute;left:0;right:0;bottom:0;height:' + hA + 'px;z-index:-1;pointer-events:none;background:' + grad('to top', mid) + '}';
     css += '#' + B.id + '::before{content:"";position:absolute;left:0;right:0;top:0;height:' + hB + 'px;z-index:-1;pointer-events:none;background:' + grad('to bottom', mid) + '}';
   }
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
