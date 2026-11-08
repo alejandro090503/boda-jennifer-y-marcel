@@ -8,7 +8,7 @@
 <meta name="description" content="Una historia de amor con su capítulo más especial. Te invitamos a nuestra boda el sábado 10 de abril de 2027 en Chimbote.">
 <meta property="og:title" content="Jennifer & Marcel · 10 de abril de 2027">
 <meta property="og:description" content="Una historia de amor con su capítulo más especial. ¡Confirma tu asistencia!">
-<meta property="og:image" content="https://boda-jennifer-y-marcel.vercel.app/og-sobre.jpg">
+<meta property="og:image" content="https://boda-jennifer-y-marcel.vercel.app/og-jm.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
@@ -638,6 +638,18 @@ main > section,#epilogo{padding:64px 22px!important}
 .card-txt .link-caps{white-space:nowrap}
 .gift-card .art-txt.gift-txt{left:26%!important;right:26%!important}
 #celebracion .art-txt.card-txt{left:19%!important;right:19%!important}
+
+/* nombres en Cinzel (pedido de la clienta: la M se perdía en Bodoni) */
+@font-face{font-family:'Cinzel';src:url('fonts/Cinzel.woff2') format('woff2');font-weight:400 900;font-style:normal;font-display:swap}
+.h-names{font-family:'Cinzel',serif!important;font-weight:500!important;font-size:clamp(30px,8.4vw,50px)!important;letter-spacing:.06em;line-height:1.08!important;color:#34332F!important}
+.h-names .amp{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:400;font-size:.62em!important;letter-spacing:0;margin:.12em 0 .1em;color:#7d6b4f}
+#familia .names-big{font-family:'Cinzel',serif!important;font-weight:500!important;font-size:clamp(32px,9vw,48px)!important;letter-spacing:.06em;line-height:1.12!important;color:#34332F}
+#familia .names-big .and{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:400;font-size:.6em!important;letter-spacing:0;color:#7d6b4f}
+/* hospedaje: una sola foto en el marco bordado */
+.hosp-photo{width:236px!important;height:316px!important;margin:0 auto 14px!important;position:relative;display:block!important;background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:visible!important}
+.hosp-photo::before{inset:0!important;background:url('bordado/marco-foto.webp') center/100% 100% no-repeat!important;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(transparent,#000 6%,#000 94%,transparent)!important;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent),linear-gradient(transparent,#000 6%,#000 94%,transparent)!important;-webkit-mask-composite:source-in;mask-composite:intersect}
+.hosp-photo img{position:absolute;left:21%;top:17%;width:58.4%!important;height:66.6%!important;border-radius:0!important;object-fit:cover;box-shadow:inset 0 0 0 1px rgba(0,0,0,.05)}
+.hosp-thumbs{display:none!important}
 </style>
 </head>
 <body class="locked">
@@ -684,7 +696,7 @@ main > section,#epilogo{padding:64px 22px!important}
 
 <section id="familia" data-nav="Familia">
   <p class="it it-sm">Junto con sus familias</p>
-  <h2 class="ttl names-big">Jennifer<br><span class="and">y</span><br>Marcel Förderer</h2>
+  <h2 class="ttl names-big">Jennifer<br><span class="and">&amp;</span><br>Marcel</h2>
   <p class="it">los invitan a celebrar su matrimonio</p>
   <p class="date-line">Sábado, 10 de abril de 2027</p>
   <div class="fam">
@@ -1173,17 +1185,9 @@ function reveal(el, from, opts){
   HOTELS.forEach(function(h, i){
     var s = document.createElement('div'); s.className = 'hosp-slide';
     s.innerHTML = '<div class="hosp-photo lev' + (i ? ' d1' : '') + '"><img src="' + h.fotos[0] + '" alt="' + h.name + '"></div>' +
-      '<div class="hosp-thumbs">' + h.fotos.map(function(f, k){ return '<button type="button" class="' + (k ? '' : 'on') + '" aria-label="Foto ' + (k + 1) + '"><img src="' + f + '" alt=""></button>'; }).join('') + '</div>' +
       '<span class="hosp-num">0' + h.n + ' · ' + h.type + '</span><h3 class="hosp-name">' + h.name + '</h3>' +
       '<p class="hosp-addr">' + h.addr + '</p><p class="hosp-dist">' + h.km + ' km · ' + h.min + ' min a la recepción</p>' +
       '<div class="hosp-btns"><a class="btn btn-solid" href="' + h.book + '" target="_blank" rel="noopener">Reservar</a><a class="btn" href="' + h.maps + '" target="_blank" rel="noopener">Cómo llegar</a></div>';
-    var main = s.querySelector('.hosp-photo img');
-    s.querySelectorAll('.hosp-thumbs button').forEach(function(b, k){
-      b.addEventListener('click', function(){
-        s.querySelectorAll('.hosp-thumbs button').forEach(function(x){ x.classList.toggle('on', x === b); });
-        main.style.opacity = 0; setTimeout(function(){ main.src = h.fotos[k]; main.style.opacity = 1; }, 200);
-      });
-    });
     track.appendChild(s);
     var d = document.createElement('button'); d.type = 'button'; d.setAttribute('aria-label', 'Hotel ' + h.n); dotsEl.appendChild(d);
   });
